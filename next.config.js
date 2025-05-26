@@ -14,9 +14,9 @@ module.exports = {
         name: 'chatbot',                // ホストアプリの名前
         filename: 'static/chunks/hostEntry.js',
         remotes: {
-          // キーは好きな名前をつけて OK
-          makepdf_remort:  
-            'makepdf_remort@https://remap.itot.jp/MFtest/makepdf-remort/_next/static/chunks/remoteEntry.js',
+          makepdf_remort: options.isServer
+            ? 'makepdf_remort@https://makepdf-remort.vercel.app/_next/static/ssr/remoteEntry.js'
+            : 'makepdf_remort@https://makepdf-remort.vercel.app/_next/static/chunks/remoteEntry.js',
         },
         shared: {
           react: { singleton: true, requiredVersion: false },
