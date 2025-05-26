@@ -1,26 +1,105 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 195 100% 95%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 196 100% 47%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 195 100% 85%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 195 100% 90%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 196 100% 47%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 196 100% 47%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 196 100% 15%;
+    --foreground: 210 40% 98%;
+
+    --card: 196 100% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 196 100% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 100% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 196 100% 30%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 196 100% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 196 100% 30%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 196 100% 30%;
+    --input: 196 100% 30%;
+    --ring: 196 100% 50%;
   }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* スクロールバーのスタイル */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 191, 255, 0.5);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 191, 255, 0.7);
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }

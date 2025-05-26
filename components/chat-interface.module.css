@@ -1,0 +1,165 @@
+/* components/chat-interface.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* width: 100vw; */
+    /* position: relative; */
+    background: linear-gradient(to bottom, #60a5fa, #3b82f6); /* 画面全体の背景 */
+  }
+  
+  .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /*height: 100%;
+    width: 100vw;*/
+    overflow: hidden;
+  }
+  
+  .cardHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* 横いっぱい */
+    background-color: #3b82f6;
+    padding: 1rem;
+    border-bottom: 1px solid #93c5fd;
+    z-index: 20;
+    height: 120px;
+    box-sizing: border-box;
+  }
+  
+  .headerInner {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+  }
+  
+  .imageWrap {
+    flex-shrink: 0;           /* 画像が縮まないように */
+    width: 120px;
+    height: 70px;
+  }
+  
+  .imageWrap img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .subtitle {
+    font-size: 0.875rem;
+    color: #bfdbfe;
+    margin-top: 0.25rem;
+  }
+  
+  .cardContent {
+    flex: 1;
+    /*margin-top: 120px;
+    margin-bottom: 80px;*/
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  }
+  
+  .scrollArea {
+    flex: 1;
+    overflow-y: auto;
+    padding: 160px 1rem 80px 1rem;
+    scrollbar-width: thin;
+  }
+
+
+/* WebKit ブラウザ用のスクロールバー装飾 */
+.scrollArea::-webkit-scrollbar {
+  width: 8px;
+}
+.scrollArea::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+}
+.scrollArea::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}  
+  
+  /* メッセージ縦並び */
+  .messageContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* 吹き出し */
+  .messageBubble {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+  .messageUser {
+    background-color: #2563eb;
+    color: white;
+  }
+  .messageBot {
+    background-color: white;
+    color: #1f2937;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 時刻 */
+  .timestamp {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+  .timestampUser {
+    color: #bfdbfe;
+    text-align: left;
+  }
+  .timestampBot {
+    color: #6b7280;
+    text-align: right;
+  }
+  
+  /* 入力エリア */
+  .inputArea {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #3b82f6;
+    border-top: 1px solid #60a5fa;
+    z-index: 20;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .inputWrapper {
+    display: flex;
+    width: 100%;
+    max-width: 960px;
+    gap: 0.5rem;
+  }
+  .inputBox {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #93c5fd;
+    border-radius: 0.375rem;
+  }
+  .sendButton {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+  

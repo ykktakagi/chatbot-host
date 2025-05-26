@@ -1,0 +1,12 @@
+/* graph-bubble.module.css */
+.mfSection {
+  margin-top: 0.5rem;
+  height: 350px;
+  position: relative;
+}
+
+.graphComment {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
