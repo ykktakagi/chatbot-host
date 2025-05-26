@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import type { MfChartConfig } from "@/data/mfConfig";
 import styles from "./graph-bubble.module.css";
 
+// @ts-expect-error Module Federation dynamic import
 const ChartWrapper = dynamic(
   () => import("makepdf_remort/ChartWrapper"),
   { ssr: false }
