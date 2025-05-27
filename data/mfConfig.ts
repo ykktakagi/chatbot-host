@@ -610,12 +610,9 @@ export const mfTopics: MfTopic[] = [
 export interface MfChartConfig {
   chartTitle?: string;
   chartType: string;
-  layout: string;
   source: string;
   dataKey: string;
   targetYear: string;
-  comparisonsCode: string;
-  comparisons: string;
   prefectureCode: number;
   prefecture: string;
   localGovCode: number;
