@@ -21,12 +21,9 @@ export function GraphBubble({ config }: GraphBubbleProps) {
       <ChartWrapper
         chartTitle={config.chartTitle || `${config.dataKey} のグラフ`}
         chartType={config.chartType}
-        layout={config.layout}
         source={config.source}
         dataKey={config.dataKey}
         targetYear={config.targetYear}
-        comparisonsCode={config.comparisonsCode || ""}
-        comparisons={config.comparisons || ""}
         prefectureCode={config.prefectureCode}
         prefecture={config.prefecture}
         localGovCode={config.localGovCode}
