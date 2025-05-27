@@ -670,6 +670,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "通学・通勤スタイル",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -686,6 +688,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "通学・通勤スタイル",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -702,6 +706,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "世帯の種類",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -718,6 +724,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "世帯の種類",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -734,6 +742,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "65歳以上の人のいる核家族世帯",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -750,6 +760,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "65歳以上の人のいる核家族世帯",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -766,6 +778,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "就業者数（国勢調査）",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -782,6 +796,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "就業者数（国勢調査）",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -798,6 +814,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "店舗数",
     targetYear: "2021年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -814,6 +832,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "店舗数",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -830,6 +850,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "店舗割合",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -846,6 +868,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "店舗割合",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -862,6 +886,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "住宅の所有数",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -878,6 +904,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "住宅の所有数",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -894,6 +922,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "住宅の建て方",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -910,6 +940,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "住宅の建て方",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -926,6 +958,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "住宅の構造",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -942,6 +976,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "住宅の構造",
     targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -958,6 +994,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "住宅の建築時期",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -974,6 +1012,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "居住室の畳数別住宅数",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -990,6 +1030,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "1住宅当たり延べ面積",
     targetYear: "年推移",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -1006,6 +1048,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "最寄りの保育所までの距離の住宅数（普通世帯）",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -1022,6 +1066,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "教育施設数[/可住地面積100k㎡]",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -1038,6 +1084,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "教育施設数",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
@@ -1054,6 +1102,8 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
     source: "統計ダッシュボード",
     dataKey: "通勤・通学手段別人数",
     targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
     localGovCode: 14205,
     localGov: "藤沢市",
     axisConfig: {
