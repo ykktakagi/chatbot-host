@@ -8,7 +8,7 @@ import {
   mfChartConfigs,
   type MfChartConfig,
 } from "@/data/mfConfig";
-import { mfMapTopics, mfMapConfigs } from "@/data/mfMapConfig";
+import { mfMapTopics, mfMapConfigs, type MfMapConfig } from "@/data/mfMapConfig";
 
 import { facilityDefaults } from "../../data/facilityDefaults";
 
