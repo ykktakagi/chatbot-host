@@ -608,6 +608,7 @@ export const mfTopics: MfTopic[] = [
  
   // ここから追加：各トピックに対応する ChartWrapper 用パラメータ
 export interface MfChartConfig {
+  chartTitle?: string;
   chartType: string;
   layout: string;
   source: string;
