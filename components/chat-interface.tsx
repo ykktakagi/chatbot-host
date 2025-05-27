@@ -11,7 +11,7 @@ import styles from "./chat-interface.module.css";
 import { GraphBubble } from "./GraphBubble";
 import { MapBubble } from "./MapBubble";
 import type { MfChartConfig } from "@/data/mfConfig";
-import type { MapProps } from "@/types/mapTypes";
+import type { MfMapConfig  } from "@/data/mfMapConfig";
 import { facilityDefaults } from "../data/facilityDefaults";
 
 type BaseMessage = {
@@ -27,7 +27,7 @@ type GraphMessage = BaseMessage & {
 };
 
 type MapMessage = BaseMessage & {
-  mapConfig: MapProps;
+  mapConfig: MfMapConfig;
 };
 
 type Message = BaseMessage | GraphMessage | MapMessage;
