@@ -183,6 +183,7 @@ User発話: "${normalized}"
       reply:     `${mapReplyText}参考に地図を表示します（${mapParsed.mapKey}）`,
       mapConfig: cfg,
       matched:   `mfMap:${mapParsed.mapKey}`,
+      componentUsage: { type: 'map', topic: mapParsed.mapKey, timestamp: new Date() }
     });
   }
 
@@ -231,6 +232,7 @@ User発話: "${normalized}"
       reply:       `${answerRes.text.trim()} 参考として「${parsed.topic}」のグラフをお出しします。`,
       graphConfig: cfg,
       matched:     `mf:${parsed.topic}`,
+      componentUsage: { type: 'graph', topic: parsed.topic, timestamp: new Date() }
     });
   }
 
