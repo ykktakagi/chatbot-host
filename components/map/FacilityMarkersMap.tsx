@@ -24,6 +24,7 @@ export function FacilityMarkersMap({
         propertyLatitude={centerLatitude}
         propertyLongitude={centerLongitude}
         facilityData={facilityData}
+        style={{ width: "100%", height: "400px" }}
       />
     </div>
   );

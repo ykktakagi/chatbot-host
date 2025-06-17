@@ -1,7 +1,21 @@
 // types/remote.d.ts
 
 declare module 'makepdf_remort/ChartWrapper' {
-  const Component: React.ComponentType<any>;
+  interface ChartWrapperProps {
+    chartTitle?: string;
+    chartType: string;
+    source: string;
+    dataKey: string;
+    targetYear?: string;
+    prefectureCode?: number;
+    prefecture?: string;
+    localGovCode?: number;
+    localGov?: string;
+    axisConfig?: any;
+    style?: React.CSSProperties;
+  }
+  
+  const Component: React.ComponentType<ChartWrapperProps>;
   export default Component;
 }
 
@@ -18,6 +32,7 @@ declare module 'makepdf_remort/MapWrapper' {
     destLongitude?: number;
     layerConfig?: any;
     facilityData?: FacilityData;
+    style?: React.CSSProperties;
   }
   
   const Component: React.ComponentType<MapWrapperProps>;

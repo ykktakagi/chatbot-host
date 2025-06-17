@@ -1,0 +1,153 @@
+.storyBookContainer {
+  max-width: 600px;
+  margin: 16px auto;
+  padding: 24px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e1e8ed;
+}
+
+.storyBookHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #d1d9e0;
+}
+
+.storyTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.sceneIndicator {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  background: #ecf0f1;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.storyContent {
+  min-height: 300px;
+  margin-bottom: 24px;
+}
+
+.storyPage {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.storyImage {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.storyImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.storyText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+.storyText p {
+  margin: 0;
+}
+
+.storyNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.navButton {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+.navButton:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sceneIndicators {
+  display: flex;
+  gap: 8px;
+}
+
+.sceneIndicatorDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #bdc3c7;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sceneIndicatorDot.active {
+  background: #3498db;
+  transform: scale(1.2);
+}
+
+.sceneIndicatorDot:hover {
+  background: #7f8c8d;
+}
+
+.storyTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  background: #ecf0f1;
+  color: #7f8c8d;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid #d5dbdb;
+}
+
+@media (max-width: 768px) {
+  .storyBookContainer {
+    margin: 8px;
+    padding: 16px;
+  }
+  
+  .storyNavigation {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .navButton {
+    width: 100%;
+  }
+}
