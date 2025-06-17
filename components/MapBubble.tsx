@@ -1,35 +1,41 @@
 // components/MapBubble.tsx
 "use client";
 
-import React from "react";
-import dynamic from "next/dynamic";
+import React, { useEffect, useRef } from "react";
 import type { MfMapConfig } from "@/data/mfMapConfig";
+import { componentRegistry } from "@/lib/webComponentRegistry";
 import styles from "./map-bubble.module.css";
-
-// MF 経由でリモートの MapWrapper を動的読み込み
-const MapWrapper = dynamic(
-  () => import("makepdf_remort/MapWrapper"),  // ← リモート名/エクスポート名に置き換えてください
-  { ssr: false }
-);
 
 interface MapBubbleProps {
   mapConfig: MfMapConfig;
 }
 
 export function MapBubble({ mapConfig }: MapBubbleProps) {
-  return (
-    <div className={styles.mapSection}>
-      {/* mapConfig の各プロパティをそのまま MapWrapper に渡します */}
-      <MapWrapper
-        mapType={mapConfig.mapType}
-        propertyName={mapConfig.propertyName}
-        propertyLatitude={mapConfig.propertyLatitude}
-        propertyLongitude={mapConfig.propertyLongitude}
-        destName={mapConfig.destName}
-        destLatitude={mapConfig.destLatitude}
-        destLongitude={mapConfig.destLongitude}
-        layerConfig={mapConfig.layerConfig}
-      />
-    </div>
-  );
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const loadMap = async () => {
+      if (typeof window === 'undefined') return;
+
+      await import('@/components/webcomponents/MapWebComponent');
+
+      if (containerRef.current) {
+        const mapElement = document.createElement('remap-map');
+        mapElement.setAttribute('props', JSON.stringify(mapConfig));
+        containerRef.current.appendChild(mapElement);
+
+        componentRegistry.logUsage({
+          componentName: 'map',
+          timestamp: new Date(),
+          context: mapConfig.mapType,
+          userQuery: '',
+          success: true
+        });
+      }
+    };
+
+    loadMap();
+  }, [mapConfig]);
+
+  return <div className={styles.mapSection} ref={containerRef} />;
 }
