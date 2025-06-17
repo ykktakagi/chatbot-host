@@ -1,0 +1,1 @@
+export { StoryBookComponent } from './StoryBookComponent';

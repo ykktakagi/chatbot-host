@@ -10,8 +10,13 @@ import Image from "next/image";
 import styles from "./chat-interface.module.css";
 import { GraphBubble } from "./GraphBubble";
 import { MapBubble } from "./MapBubble";
+import { PopulationTrendGraph } from "./graphs/PopulationTrendGraph";
+import { LandPriceGraph } from "./graphs/LandPriceGraph";
+import { StationPassengerGraph } from "./graphs/StationPassengerGraph";
+import { StoryBookComponent } from "./story/StoryBookComponent";
 import type { MfChartConfig } from "@/data/mfConfig";
 import type { MfMapConfig  } from "@/data/mfMapConfig";
+import type { StoryData } from "../types/story";
 import { facilityDefaults } from "../data/facilityDefaults";
 
 type BaseMessage = {
@@ -22,15 +27,19 @@ type BaseMessage = {
 };
 
 type GraphMessage = BaseMessage & {
-  graphTopic: string;
-  graphConfig: MfChartConfig;
+  graphTopic?: string;
+  graphConfig?: MfChartConfig;
 };
 
 type MapMessage = BaseMessage & {
-  mapConfig: MfMapConfig;
+  mapConfig?: MfMapConfig;
 };
 
-type Message = BaseMessage | GraphMessage | MapMessage;
+type StoryMessage = BaseMessage & {
+  storyData?: StoryData;
+};
+
+type Message = GraphMessage | MapMessage | StoryMessage;
 
 // ───────────────────────────────────────────────────────
 // 0. 物件＆地域デフォルト情報
@@ -103,7 +112,7 @@ export function ChatInterface() {
           role: "assistant",
           content: data.reply,
           timestamp: new Date(),
-          graphTopic: cfg.dataKey,
+          graphTopic: data.matched?.replace("mf:", ""),
           graphConfig: cfg,
         };
         setMessages(prev => [...prev, graphMsg]);
@@ -118,6 +127,16 @@ export function ChatInterface() {
           mapConfig: data.mapConfig,
         };
         setMessages(prev => [...prev, mapMsg]);
+      }
+      else if (data.storyData) {
+        const storyMsg: StoryMessage = {
+          id: `s-${Date.now()}`,
+          role: "assistant",
+          content: data.reply,
+          timestamp: new Date(),
+          storyData: data.storyData,
+        };
+        setMessages(prev => [...prev, storyMsg]);
       }
       // 通常応答
       else {
@@ -171,8 +190,9 @@ export function ChatInterface() {
             <div className={styles.messageContainer}>
               {messages.map(msg => {
                 const isUser = msg.role === "user";
-                const isGraph = "graphConfig" in msg;
-                const isMap = "mapConfig" in msg;
+                const isGraph = "graphConfig" in msg && msg.graphConfig;
+                const isMap = "mapConfig" in msg && msg.mapConfig;
+                const isStory = "storyData" in msg && msg.storyData;
                 const bubbleClass = isUser ? styles.messageUser : styles.messageBot;
                 const wrapperClass = isUser ? styles.messageRight : styles.messageLeft;
                 return (
@@ -188,9 +208,21 @@ export function ChatInterface() {
                       <div>
                         <div className={`${styles.messageBubble} ${bubbleClass}`}>  
                           <p dangerouslySetInnerHTML={{ __html: msg.content }} />
-                          {isGraph && <GraphBubble config={(msg as GraphMessage).graphConfig} />}
-                          {isMap   && <MapBubble  mapConfig={(msg as MapMessage).mapConfig} />}
-                          
+                          {isGraph && (
+                            <>
+                              {(msg as GraphMessage).graphTopic === "人口推移" ? (
+                                <PopulationTrendGraph config={(msg as GraphMessage).graphConfig!} />
+                              ) : (msg as GraphMessage).graphTopic === "公示価格推移" ? (
+                                <LandPriceGraph config={(msg as GraphMessage).graphConfig!} />
+                              ) : (msg as GraphMessage).graphTopic === "駅乗降人員推移" ? (
+                                <StationPassengerGraph config={(msg as GraphMessage).graphConfig!} />
+                              ) : (
+                                <GraphBubble config={(msg as GraphMessage).graphConfig!} />
+                              )}
+                            </>
+                          )}
+                          {isMap && <MapBubble mapConfig={(msg as MapMessage).mapConfig!} />}
+                          {isStory && <StoryBookComponent storyData={(msg as StoryMessage).storyData!} propertyName={facilityDefaults.facilityName} />}
                         </div>
                         <p className={`${styles.timestamp} ${isUser ? styles.timestampUser : styles.timestampBot}`}>  
                           {msg.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}

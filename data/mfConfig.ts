@@ -603,6 +603,65 @@ export const mfTopics: MfTopic[] = [
       "自転車で通える距離が多い？",
       "複数の交通手段を使ってる人が多い？"
     ]
+  },
+  {
+    "label": "人口推移",
+    "aliases": [
+      "人口の変化",
+      "人口トレンド",
+      "人口は増えてる？",
+      "人口減少",
+      "人口増加",
+      "人口の推移",
+      "住民数の変化",
+      "人口動態",
+      "人口統計",
+      "この地域の人口は？",
+      "人口が減ってる？",
+      "人口が増加してる？",
+      "住民は増えてる？",
+      "過疎化してる？",
+      "人口密度の変化"
+    ]
+  },
+  {
+    "label": "公示価格推移",
+    "aliases": [
+      "地価の変化",
+      "土地価格",
+      "不動産価格推移",
+      "地価は上がってる？",
+      "公示地価",
+      "土地の値段",
+      "地価動向",
+      "不動産相場",
+      "土地価格の推移",
+      "地価トレンド",
+      "土地が高くなってる？",
+      "地価の上昇",
+      "不動産価格の変化",
+      "土地の相場",
+      "地価情報"
+    ]
+  },
+  {
+    "label": "駅乗降人員推移",
+    "aliases": [
+      "駅の利用者数",
+      "電車利用者",
+      "駅の混雑",
+      "乗降客数の変化",
+      "駅利用者の推移",
+      "電車の利用状況",
+      "駅の人の流れ",
+      "通勤ラッシュ",
+      "駅の賑わい",
+      "電車の混雑度",
+      "駅利用者数の変化",
+      "乗客数の推移",
+      "駅の活用度",
+      "交通量の変化"
+    ]
   }
 ];
  
@@ -1115,4 +1174,58 @@ export const mfChartConfigs: Record<string, MfChartConfig> = {
       unit: "人"
     }
   },
+  "人口推移": {
+    chartType: "積み上げ棒グラフ",
+    source: "統計ダッシュボード",
+    dataKey: "年齢別人口",
+    targetYear: "年推移",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
+    localGovCode: 14205,
+    localGov: "藤沢市",
+    axisConfig: {
+      xKey: "time",
+      yKey: "value",
+      categoryLabel: "category",
+      xLabel: "",
+      yLabel: "",
+      unit: "人"
+    }
+  },
+  "公示価格推移": {
+    chartType: "積み上げ棒グラフ",
+    source: "統計ダッシュボード",
+    dataKey: "世帯の種類",
+    targetYear: "過去10年",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
+    localGovCode: 14205,
+    localGov: "藤沢市",
+    axisConfig: {
+      xKey: "time",
+      yKey: "value",
+      categoryLabel: "category",
+      xLabel: "",
+      yLabel: "",
+      unit: "円/㎡"
+    }
+  },
+  "駅乗降人員推移": {
+    chartType: "円グラフ",
+    source: "統計ダッシュボード",
+    dataKey: "年齢別人口",
+    targetYear: "最新",
+    prefectureCode: 14000,
+    prefecture: "神奈川県",
+    localGovCode: 14205,
+    localGov: "藤沢市",
+    axisConfig: {
+      xKey: "",
+      yKey: "value",
+      categoryLabel: "category",
+      xLabel: "",
+      yLabel: "",
+      unit: "人/日"
+    }
+  }
 };
